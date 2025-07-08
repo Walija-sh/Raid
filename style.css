@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+     font-family: "Oswald", sans-serif;
+    font-size: 12px;
+    overflow-x: hidden;
+}
+a{
+    text-decoration: none;
+}
+button{
+    border: none;
+    background: none;
+    font-family: "Oswald", sans-serif;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+h1,h2,h3,h4,h5,h6{
+     font-family: "Oswald", sans-serif;
+}
+p,button,a{
+     font-family: "Oswald", sans-serif;
+}
+ul{
+    list-style: none;
+}
+p{
+    line-height: 1.5;
+}
+
+.main-container{
+    background: black;
+    position: relative;
+    min-height: 100vh;
+
+}
+.video-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+.video-bg::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30%; 
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 100%);
+  pointer-events: none;
+  z-index: 200;
+}
+.video-bg video{
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+}
+.main-content-cont{
+    position: relative;
+    z-index: 5000;
+    padding-inline: 20px;
+    padding-top: 100px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.main-content{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.main-logo{
+    max-width: 26.8vh;
+    justify-self: center;
+}
+.main-h{
+    text-align: center;
+    font-size: 5.7vh;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-shadow: 0 22px 49px #670000,0 2px 0 #5f5c52,0 -13px 55px hsla(0,28%,65%,.502);
+    line-height: 1;
+    color: #fff;
+    z-index: 50010;
+}
+
+.main-h b{
+    font-size: 12.7vh;
+}
+.main-h .char-b{
+    font-size: 7.7vh;
+}
+.age-h span{
+    font-size: 8vh;
+}
+.age-h b{
+    font-size: 10vh;
+}
+.main-btns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-btns .btn-l,.main-btns .btn-r{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+      height: 9.7vh;
+    width: 19.1vh;
+      position: relative;
+    
+}
+.main-btns .btn-r{
+    background: url('./assets/imgi_6_btn_right.webp') center/contain no-repeat;
+
+    
+}
+.main-btns .btn-l{
+    background: url('./assets/imgi_4_btn_left.webp') center/contain no-repeat;
+
+    
+}
+.btn-l::after,.btn-r::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+     z-index: 50;
+        animation: opacityChanges 1s ease-in-out infinite alternate;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.btn-r::after{
+     background: url('./assets/imgi_7_btn_right_hover.webp') center/contain no-repeat;
+}
+.btn-l::after{
+
+     background: url('./assets/imgi_5_btn_left_hover.webp') center/contain no-repeat;
+}
+.btn-r:hover::after,.btn-l:hover::after  {
+  animation: none;
+  opacity: 1;
+}
+.main-btns span{
+    position: relative;
+    display: inline-block;
+    font-size: 3.1vh;
+    font-weight: 500;
+    padding: 2.6vh 4.6vh 4.7vh 3.6vh;
+    line-height: 1.7531rem;
+    z-index: 100;
+}
+.main-btns .btn-l span{
+   color: #28488d;
+}
+.main-btns .btn-r span{
+   color: #a71d37;
+}
+.main-bt-p p{
+    color: #eee;
+    font-size: 10px ;
+    text-align: center;
+    padding-block: 5px;
+    font-family: sans-serif;
+    font-weight: 400;
+}
+.main-bottom a{
+     font-size: 10px ;
+     font-family: sans-serif;
+    color: #eee;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.main-bt-links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-bt-links a{
+    margin-right: 9px;
+    padding-right: 10px;
+}
+.main-bt-links li:nth-child(1) a,.main-bt-links li:nth-child(2) a{
+    border-right: 1px solid;
+}
+@keyframes opacityChanges {
+  0% {
+    opacity: .1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.audio-btn{
+position: absolute;
+width: 4vh;
+height: 4vh;
+max-width: 51px;
+max-height: 51px;
+bottom: 7%;
+right: 3%;
+cursor: pointer;
+}
+
+/* age */
+.confirm-age-btn{
+    margin-top: 10px;
+    background: url('./assets/btn-age-bg.webp') center/contain no-repeat;
+    position: relative;
+}
+.confirm-age-btn a{
+      display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3vh;
+    color: #eee;
+    text-shadow: 1px 1px 3px #600606;
+    text-align: center;
+    font-style: italic;
+    font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+    position: relative;
+    padding: 12px 17px;
+    z-index: 500001;
+}
+.confirm-age-btn::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+     z-index: 50;
+        animation: opacityChanges 1s ease-in-out infinite alternate;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.confirm-age-btn::after{
+     background: url('./assets/btn_age-bg-hover.webp') center/contain no-repeat;
+}
+
+.confirm-age-btn:hover::after  {
+  animation: none;
+  opacity: 1;
+}
+/* Fade overlay */
+.fade-overlay {
+  position: fixed;
+  inset: 0;
+  background: black;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+body.loaded .fade-overlay {
+  opacity: 0;
+}
+
+body.fade-out .fade-overlay {
+  opacity: 1;
+  pointer-events: all;
+}
+
+@media screen  and (min-width:500px){
+        .main-h{
+    font-size: 9.7vh;
+}
+.main-h b,.main-h .char-b{
+    font-size: 12.7vh;
+}
+.age-h span{
+    font-size: 14vh;
+}
+.age-h b{
+    font-size: 15.6vh;
+}
+.main-btns .btn-l,.main-btns .btn-r{
+    height: 14.7vh;
+    width: 31.1vh;
+    
+}
+.audio-btn{
+width: 11vh;
+height: 11vh;
+}
+
+
+}
+@media screen  and (min-width:768px){
+    .main-container{
+        height: 100vh;
+        overflow-y: hidden;
+    }
+    
+}
+@media screen  and (min-width:900px){
+    .main-h b,.main-h .char-b{
+    font-size: 14.7vh;
+}
+.age-h b{
+    font-size: 15.6vh;
+}
+
+
+
+
+}
+@media screen  and (min-width:1280px){
+       .video-bg::after {
+height: 10%;
+}
+.main-h b,.main-h .char-b{
+    font-size: 17.7vh;
+}
+.age-h b{
+    font-size: 15.6vh;
+}
+
+}

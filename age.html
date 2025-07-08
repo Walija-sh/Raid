@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAID: Shadow Legends</title>
+    <link rel="shortcut icon" href="./assets/favicon.webp" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main class="main-container">
+        <div class="video-bg">
+          <video autoplay muted loop>
+    <source src="./assets/bg-video.mp4" type="video/mp4">
+  </video>
+        </div>
+
+     <div class="main-content-cont">
+             <div class="main-content">
+            <div class="main-logo">
+                <img src="./assets/imgi_3_logo_winter.webp" alt="Logo">
+            </div>
+            <div class="main-h age-h">
+                <b>Confirm</b><br>
+                <span>your age</span>
+            </div>
+            <div class="confirm-age-btn">
+               <a href="#">
+               <div style="font-size:3.2vh">I`m <span style="color: #fdef00;">over 18</span> years old <div style="font-size: 5.3vh;font-weight:bold;">LET`S PLAY!</div></div>
+               </a>
+            </div>
+        </div>
+        <div class="main-bottom">
+            <ul class="main-bt-links">
+                <li>
+                    <a href="#">Support</a>
+                </li>
+                <li>
+                    <a href="#">Contacts</a>
+                </li>
+                <li>
+                    <a href="#">Legal Terms</a>
+                </li>
+            </ul>
+            <div class="main-bt-p">
+               <p> All trademarks are the property of their respective owners &copy; 2010 - 2025  <a href="#">Plarium</a>. All rights reserved.</p>
+            </div>
+        </div>
+        <audio id="bg-audio" autoplay loop muted>
+  <source src="./assets/bgAudio.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+        <div class="audio-btn" id="audio-toggle">
+  <img src="./assets/imgi_8_btn_pause.webp" alt="audio btn" id="audio-icon">
+</div>
+     </div>
+    </main>
+    <div class="fade-overlay"></div>
+
+   <script>
+ document.addEventListener("DOMContentLoaded", function () {
+
+  const audio = document.getElementById('bg-audio');
+const toggleBtn = document.getElementById('audio-toggle');
+const icon = document.getElementById('audio-icon');
+
+window.addEventListener('load', () => {
+  audio.muted = true;
+  audio.play().catch(err => {
+    console.warn("Autoplay (muted) blocked:", err);
+  });
+});
+
+let isPlaying = true; 
+toggleBtn.addEventListener('click', () => {
+  if (audio.paused) {
+    audio.muted = false;
+    audio.play();
+    icon.src = './assets/imgi_8_btn_play.webp'; 
+    isPlaying = true;
+  } else {
+    audio.pause();
+    icon.src = './assets/imgi_8_btn_pause.webp'; 
+    isPlaying = false;
+  }
+});
+
+ })
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('loaded');
+  });
+
+  document.querySelectorAll('a[href]').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && !href.startsWith('#') && !href.startsWith('http')) {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const url = link.href;
+        document.body.classList.remove('loaded');
+        document.body.classList.add('fade-out');
+
+        setTimeout(() => {
+          window.location.href = url;
+        }, 400); 
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
