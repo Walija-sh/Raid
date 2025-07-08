@@ -229,7 +229,7 @@ cursor: pointer;
     position: relative;
     
 }
-.confirm-age-btn button{
+.confirm-age-btn a{
     cursor: pointer;
       display: flex;
     align-items: center;
