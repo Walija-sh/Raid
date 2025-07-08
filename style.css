@@ -227,8 +227,10 @@ cursor: pointer;
     margin-top: 10px;
     background: url('./assets/btn-age-bg.webp') center/contain no-repeat;
     position: relative;
+    
 }
-.confirm-age-btn a{
+.confirm-age-btn button{
+    cursor: pointer;
       display: flex;
     align-items: center;
     justify-content: center;
@@ -239,7 +241,7 @@ cursor: pointer;
     font-style: italic;
     font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
     position: relative;
-    padding: 12px 17px;
+    padding: 15px 30px;
     z-index: 500001;
 }
 .confirm-age-btn::after{
@@ -262,22 +264,20 @@ cursor: pointer;
 /* Fade overlay */
 .fade-overlay {
   position: fixed;
-  inset: 0;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
   background: black;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 1;
-  transition: opacity 0.4s ease;
-}
-
-body.loaded .fade-overlay {
   opacity: 0;
+  transition: opacity 0.4s;
+  z-index: 5000000;
+  pointer-events: none;
+}
+.fade-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
-body.fade-out .fade-overlay {
-  opacity: 1;
-  pointer-events: all;
-}
 
 @media screen  and (min-width:500px){
         .main-h{
@@ -295,6 +295,7 @@ body.fade-out .fade-overlay {
 .main-btns .btn-l,.main-btns .btn-r{
     height: 14.7vh;
     width: 31.1vh;
+    cursor: pointer;
     
 }
 .audio-btn{
